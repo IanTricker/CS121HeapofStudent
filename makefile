@@ -1,4 +1,4 @@
-studentHeap: address.o, date.o, student.o, main.o
+studentHeap: address.o date.o student.o main.o
 	g++ -g address.o date.o student.o main.o -o studentHeap
 
 main.o: address.h date.h student.h main.cpp

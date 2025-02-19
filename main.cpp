@@ -10,7 +10,7 @@ void testStudent();
 int main(){
   std::cout << "Hello!" << std::endl;
   testAddress();
-  //testDate();
+  testDate();
   //testStudent();
   return 0;
 } // end main

@@ -12,12 +12,12 @@ class Student{
     std::string lastName;
     Date* dob;
     Date* expectedGrad;
-    Address* Address;
+    Address* address;
     int creditHours;
   public:
     Student();
     ~Student();
-    void init(studentString);
+    void init(std::string studentString);
     void printStudent();
     std::string getLastFirst();
 };
