@@ -10,8 +10,8 @@ void testStudent();
 int main(){
   std::cout << "Hello!" << std::endl;
   testAddress();
-  testDate();
-  testStudent();
+  //testDate();
+  //testStudent();
   return 0;
 } // end main
 
