@@ -30,6 +30,7 @@ void Student::init(std::string studentString){
   std::string zip;
   std::string dobString;
   std::string expectedGradString;
+  std::string creditHoursString;
 
   ss.clear();
   ss.str(studentString);
@@ -44,7 +45,7 @@ void Student::init(std::string studentString){
   getline(ss, expectedGradString, ',');
   getline(ss, creditHoursString, ',');
   
-  ss.clear;
+  ss.clear();
   ss.str("");
   
   ss << creditHoursString;
@@ -74,7 +75,7 @@ void Student::printStudent(){
 std::string Student::getLastFirst(){
   std::stringstream ss;
   ss.clear();
-  ss << lastName << "," << firstName;
+  ss << lastName << ", " << firstName << std::endl;
   return ss.str();
 } // end getLastFirst
 
