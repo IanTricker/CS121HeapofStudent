@@ -22,3 +22,6 @@ run: studentHeap
 
 debug: studentHeap
 	gdb studentHeap
+
+val: studentHeap
+	valgrind --leak-check=full ./studentHeap
