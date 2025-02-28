@@ -1,4 +1,7 @@
 #include <iostream>
+#include <vector>
+#include <fstream>
+#include <sstream>
 #include "date.h"
 #include "address.h"
 #include "student.h"
@@ -7,13 +10,52 @@ void testAddress();
 void testDate();
 void testStudent();
 
+void loadStudent();
+void printStudent();
+void printData();
+void findStudents();
+void sort();
+void menu();
+
 int main(){
-  std::cout << "Hello!" << std::endl;
-  testAddress();
-  testDate();
-  testStudent();
+  std::vector<Student*>& students;
+  menu();
+  //std::cout << "Hello!" << std::endl;
+  //testAddress();
+  //testDate();
+  //testStudent();
   return 0;
 } // end main
+
+
+void menu(){
+  bool keepGoing=true;
+  std::string input;
+  while(keepGoing){
+    std::cout << "0) quit" << std::endl << "1) print all student names" << std::endl << "2) print all student data" << std::endl << "3) find a student" << std::endl << "4) sort" << std::endl << std::endl << "Please choose 0-4: ";
+    std::cin >> input;
+    if(input=="1"){
+      printStudents(std::vector<Student*>& students);
+    } // end if
+    if(input=="2"){
+      printData(std::vector<Student*>& students);
+    } // end if
+    if(input=="3"){
+      findStudents(std::vector<Student*>& students);
+    } // end if
+    if(input=="4"){
+      sort(std::vector<Student*>& students);
+    } // end if
+    if(input=="0"){
+      keepGoing=false;
+    } // end if
+  } // end while
+} // end menu
+
+
+
+
+
 
 void testAddress(){
   Address a;
@@ -36,3 +78,7 @@ void testStudent(){
   std::cout << student->getLastFirst();
   delete student;
 } // end testStudent
+
+
+
+
