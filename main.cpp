@@ -15,7 +15,7 @@ void loadStudent(std::vector<Student*>& students);
 void printStudent(std::vector<Student*>& students);
 void printStudentNames(std::vector<Student*>& students);
 void findStudents(std::vector<Student*>& students);
-//void sort(std::vector<Student*>& students);
+void sort(std::vector<Student*>& students);
 void delStudents(std::vector<Student*>& students);
 std::string menu();
 
@@ -37,7 +37,7 @@ int main(){
       findStudents(students);
     } // end if
     if(choice=="4"){
-     //sort(students);
+     sort(students);
     } // end if
     if(choice=="0"){
       keepGoing=false;
@@ -49,7 +49,7 @@ int main(){
 } // end main
 
 std::string menu(){
-  std::cout << "0) quit" << std::endl << "1) print all student names" << std::endl << "2) print all student data" << std::endl << "3) find a student" << std::endl << "4) sort" << std::endl << std::endl << "Please choose 0-4: " << std::endl;
+  std::cout << "0) quit" << std::endl << "1) print all student names" << std::endl << "2) print all student data" << std::endl << "3) find a student" << std::endl << std::endl << "Please choose 0-3: " << std::endl;
   std::string choice;
   std::cin >> choice;
   return choice;
@@ -92,10 +92,21 @@ void printStudentNames(std::vector<Student*>& students){
 
 
 void findStudents(std::vector<Student*>& students){
-  
+  std::string lastName;
+  std::cout << "last name of student: ";
+  std::cin >> lastName;
+  std::cout << std::endl;
+  for(const auto& student : students){
+    if(student->getLastName().find(lastName) != std::string::npos){
+      student->printStudent();
+    } // end if
+  } // end for loop
+  std::cout << std::endl;
 } // end findStudents
 
-
+void sort(std::vector<Student*>& students){
+  
+} // end sort
 
 
 

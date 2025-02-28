@@ -84,7 +84,10 @@ std::string Student::getFirstName(){
 } // end getFirstName
 
 std::string Student::getLastName(){
-  return lastName;
+  std::stringstream ss;
+  ss.clear();
+  ss << lastName << std::endl;
+  return ss.str();
 } // end getLastName
 
 int getCreditHours(){
